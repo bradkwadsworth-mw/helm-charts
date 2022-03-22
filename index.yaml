@@ -15,4 +15,60 @@ entries:
     urls:
     - https://github.com/bradkwadsworth-mw/helm-charts/releases/download/cert-manager-0.1.0/cert-manager-0.1.0.tgz
     version: 0.1.0
-generated: "2022-03-22T16:53:05.973741727Z"
+  external-secrets:
+  - apiVersion: v2
+    appVersion: 0.4.4
+    created: "2022-03-22T16:56:49.92625621Z"
+    dependencies:
+    - name: external-secrets
+      repository: https://charts.external-secrets.io
+      version: 0.4.4
+    description: A Helm chart for Kubernetes
+    digest: 496fab82bd27e469b95d808993cc42e2318b45ec52da01ecaf6a6283348df025
+    name: external-secrets
+    type: application
+    urls:
+    - https://github.com/bradkwadsworth-mw/helm-charts/releases/download/external-secrets-0.1.0/external-secrets-0.1.0.tgz
+    version: 0.1.0
+  gatekeeper:
+  - apiVersion: v2
+    appVersion: v3.7.1
+    created: "2022-03-22T16:56:50.133479841Z"
+    dependencies:
+    - name: gatekeeper
+      repository: https://open-policy-agent.github.io/gatekeeper/charts
+      version: v3.7.1
+    description: A Helm chart for Kubernetes
+    digest: c50b8a63b4ddbf1351d606c197683b6384dd7f9ecd22cc622b9837582956524f
+    name: gatekeeper
+    type: application
+    urls:
+    - https://github.com/bradkwadsworth-mw/helm-charts/releases/download/gatekeeper-0.1.0/gatekeeper-0.1.0.tgz
+    version: 0.1.0
+  ingress-nginx:
+  - apiVersion: v2
+    appVersion: 4.0.18
+    created: "2022-03-22T16:56:50.336138046Z"
+    dependencies:
+    - name: ingress-nginx
+      repository: https://kubernetes.github.io/ingress-nginx
+      version: 4.0.18
+    description: A Helm chart for Kubernetes
+    digest: d355bc1b0987faf8ccac2bd8812729a8783812d05eb5bc2db6114f57f1b0b5f3
+    name: ingress-nginx
+    type: application
+    urls:
+    - https://github.com/bradkwadsworth-mw/helm-charts/releases/download/ingress-nginx-0.1.0/ingress-nginx-0.1.0.tgz
+    version: 0.1.0
+  pod-security-policies:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2022-03-22T16:56:50.56232118Z"
+    description: A Helm chart for Kubernetes
+    digest: e8b639fcbe62635c7c38d637611cff5d7a2427de69387b60f23026f61ca0f953
+    name: pod-security-policies
+    type: application
+    urls:
+    - https://github.com/bradkwadsworth-mw/helm-charts/releases/download/pod-security-policies-0.1.0/pod-security-policies-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-03-22T16:56:50.56233748Z"
