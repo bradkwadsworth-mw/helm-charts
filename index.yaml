@@ -1,0 +1,119 @@
+apiVersion: v1
+entries:
+  cert-manager:
+  - apiVersion: v2
+    appVersion: v1.7.1
+    created: "2022-03-22T17:29:07.549672992Z"
+    dependencies:
+    - name: cert-manager
+      repository: https://charts.jetstack.io
+      version: v1.7.1
+    description: A Helm chart for Kubernetes
+    digest: 257a546729f5cdf35076c93d196930efedde297a6aeb74d6b2b8679a7ebfe26f
+    name: cert-manager
+    type: application
+    urls:
+    - https://github.com/bradkwadsworth-mw/helm-charts/releases/download/cert-manager-0.1.0/cert-manager-0.1.0.tgz
+    version: 0.1.0
+  external-secrets:
+  - apiVersion: v2
+    appVersion: 0.4.4
+    created: "2022-03-22T17:29:07.782931487Z"
+    dependencies:
+    - name: external-secrets
+      repository: https://charts.external-secrets.io
+      version: 0.4.4
+    description: A Helm chart for Kubernetes
+    digest: a8d3b00ca2d480b49852dc46aecef69d8024e7c47a64aed9bb436ad23b720e81
+    name: external-secrets
+    type: application
+    urls:
+    - https://github.com/bradkwadsworth-mw/helm-charts/releases/download/external-secrets-0.1.0/external-secrets-0.1.0.tgz
+    version: 0.1.0
+  ingress-nginx:
+  - apiVersion: v2
+    appVersion: 4.0.18
+    created: "2022-03-22T17:29:07.985385469Z"
+    dependencies:
+    - name: ingress-nginx
+      repository: https://kubernetes.github.io/ingress-nginx
+      version: 4.0.18
+    description: A Helm chart for Kubernetes
+    digest: ee5f121a5c4b53f2cc59b39ff95362e0bc962da75e9ddb67fc57e28e87d59cba
+    name: ingress-nginx
+    type: application
+    urls:
+    - https://github.com/bradkwadsworth-mw/helm-charts/releases/download/ingress-nginx-0.1.0/ingress-nginx-0.1.0.tgz
+    version: 0.1.0
+  istio-base:
+  - apiVersion: v2
+    appVersion: 1.13.2
+    created: "2022-03-22T17:29:08.201904757Z"
+    dependencies:
+    - name: base
+      repository: https://istio-release.storage.googleapis.com/charts
+      version: 1.13.2
+    description: A Helm chart for Kubernetes
+    digest: bea188a0b2a8911b74898b826dc5aae289d041fd30aeab8f1e15fe6cf888c42e
+    name: istio-base
+    type: application
+    urls:
+    - https://github.com/bradkwadsworth-mw/helm-charts/releases/download/istio-base-0.1.0/istio-base-0.1.0.tgz
+    version: 0.1.0
+  istio-ingress:
+  - apiVersion: v2
+    appVersion: 1.13.2
+    created: "2022-03-22T17:29:08.45387016Z"
+    dependencies:
+    - name: gateway
+      repository: https://istio-release.storage.googleapis.com/charts
+      version: 1.13.2
+    description: A Helm chart for Kubernetes
+    digest: cec4f4c4c15b7954c5b3f404fbb2f3bd93fd1467cb0dbf57a8e38924c73cd8ed
+    name: istio-ingress
+    type: application
+    urls:
+    - https://github.com/bradkwadsworth-mw/helm-charts/releases/download/istio-ingress-0.1.0/istio-ingress-0.1.0.tgz
+    version: 0.1.0
+  istiod:
+  - apiVersion: v2
+    appVersion: 1.13.2
+    created: "2022-03-22T17:29:08.672418949Z"
+    dependencies:
+    - name: istiod
+      repository: https://istio-release.storage.googleapis.com/charts
+      version: 1.13.2
+    description: A Helm chart for Kubernetes
+    digest: 281117e66bfddcf138ae840a616c0f3e687f50b583eb0af24a0cb1ffbcc33acf
+    name: istiod
+    type: application
+    urls:
+    - https://github.com/bradkwadsworth-mw/helm-charts/releases/download/istiod-0.1.0/istiod-0.1.0.tgz
+    version: 0.1.0
+  opa-gatekeeper:
+  - apiVersion: v2
+    appVersion: v3.7.1
+    created: "2022-03-22T17:29:08.885745336Z"
+    dependencies:
+    - name: gatekeeper
+      repository: https://open-policy-agent.github.io/gatekeeper/charts
+      version: v3.7.1
+    description: A Helm chart for Kubernetes
+    digest: 2b9b0cb4c4b6884637e6a17f8cdc1cf6a6bf9f867d7ccad0835a4fbb4019d688
+    name: opa-gatekeeper
+    type: application
+    urls:
+    - https://github.com/bradkwadsworth-mw/helm-charts/releases/download/opa-gatekeeper-0.1.0/opa-gatekeeper-0.1.0.tgz
+    version: 0.1.0
+  pod-security-policies:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2022-03-22T17:29:09.09389562Z"
+    description: A Helm chart for Kubernetes
+    digest: 984f5a4d0df63fb859ca9480ff0c58c0ac8af3cc7f99d764160a01e4937b9399
+    name: pod-security-policies
+    type: application
+    urls:
+    - https://github.com/bradkwadsworth-mw/helm-charts/releases/download/pod-security-policies-0.1.0/pod-security-policies-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-03-22T17:29:09.09390212Z"
