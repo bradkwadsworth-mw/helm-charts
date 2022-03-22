@@ -1,0 +1,8 @@
+nameOverride: ""
+fullnameOverride: ""
+
+ingress-nginx:
+  controller:
+    service:
+      ipFamilies: []
+      ipFamilyPolicy: ""
