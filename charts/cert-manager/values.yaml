@@ -1,0 +1,7 @@
+nameOverride: ""
+fullnameOverride: ""
+
+email:
+
+cert-manager:
+  installCRDs: true
