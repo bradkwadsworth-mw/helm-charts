@@ -1,5 +1,65 @@
 apiVersion: v1
 entries:
+  argo-cd:
+  - apiVersion: v2
+    appVersion: 4.2.1
+    created: "2022-03-22T19:59:41.363960503Z"
+    dependencies:
+    - name: argo-cd
+      repository: https://argoproj.github.io/argo-helm
+      version: 4.2.1
+    description: A Helm chart for Kubernetes
+    digest: aef6932adf9944c76d3ca161e852a4ac35d205402479328033957c6bb39f4073
+    name: argo-cd
+    type: application
+    urls:
+    - https://github.com/bradkwadsworth-mw/helm-charts/releases/download/argo-cd-0.1.0/argo-cd-0.1.0.tgz
+    version: 0.1.0
+  argo-events:
+  - apiVersion: v2
+    appVersion: 1.12.0
+    created: "2022-03-22T19:59:41.47464904Z"
+    dependencies:
+    - name: argo-events
+      repository: https://argoproj.github.io/argo-helm
+      version: 1.12.0
+    description: A Helm chart for Kubernetes
+    digest: f756657b573ecbe8e94572bfd0b16b077d5b59dd327b63f82b16ad229165756c
+    name: argo-events
+    type: application
+    urls:
+    - https://github.com/bradkwadsworth-mw/helm-charts/releases/download/argo-events-0.1.0/argo-events-0.1.0.tgz
+    version: 0.1.0
+  argo-rollouts:
+  - apiVersion: v2
+    appVersion: 2.11.0
+    created: "2022-03-22T19:59:41.624046435Z"
+    dependencies:
+    - name: argo-rollouts
+      repository: https://argoproj.github.io/argo-helm
+      version: 2.11.0
+    description: A Helm chart for Kubernetes
+    digest: f7cec210214d0b5bb4aaba31a61e0e487622d499919b84746ae888a96e0b78c2
+    name: argo-rollouts
+    type: application
+    urls:
+    - https://github.com/bradkwadsworth-mw/helm-charts/releases/download/argo-rollouts-0.1.0/argo-rollouts-0.1.0.tgz
+    version: 0.1.0
+  argo-workflows:
+  - apiVersion: v2
+    appVersion: 0.13.0
+    created: "2022-03-22T19:59:41.758561932Z"
+    dependencies:
+    - name: argo-workflows
+      repository: https://argoproj.github.io/argo-helm
+      version: 0.13.0
+    description: A Helm chart for Kubernetes
+    digest: 0adf9636a0047880441fbce2d0dfb12fffe9bd9a498c2b8e8aaeb0cda230c7cf
+    name: argo-workflows
+    type: application
+    urls:
+    - https://github.com/bradkwadsworth-mw/helm-charts/releases/download/argo-workflows-0.1.0/argo-workflows-0.1.0.tgz
+    version: 0.1.0
   cert-manager:
   - apiVersion: v2
     appVersion: v1.7.1
@@ -90,6 +150,36 @@ entries:
     urls:
     - https://github.com/bradkwadsworth-mw/helm-charts/releases/download/istiod-0.1.0/istiod-0.1.0.tgz
     version: 0.1.0
+  kube-prometheus-stack:
+  - apiVersion: v2
+    appVersion: 34.1.1
+    created: "2022-03-22T19:59:41.926683152Z"
+    dependencies:
+    - name: kube-prometheus-stack
+      repository: https://prometheus-community.github.io/helm-charts
+      version: 34.1.1
+    description: A Helm chart for Kubernetes
+    digest: 447fa9de1671927a932a8d080fdc38b9d4991e574f1d9d5bacb992834f799d53
+    name: kube-prometheus-stack
+    type: application
+    urls:
+    - https://github.com/bradkwadsworth-mw/helm-charts/releases/download/kube-prometheus-stack-0.1.0/kube-prometheus-stack-0.1.0.tgz
+    version: 0.1.0
+  loki-stack:
+  - apiVersion: v2
+    appVersion: 2.6.1
+    created: "2022-03-22T19:59:42.073921732Z"
+    dependencies:
+    - name: loki-stack
+      repository: https://grafana.github.io/helm-charts
+      version: 2.6.1
+    description: A Helm chart for Kubernetes
+    digest: 3325ed710ecf0ce74505787b460388f1af0096fb276c3dd3a1659b066caedce5
+    name: loki-stack
+    type: application
+    urls:
+    - https://github.com/bradkwadsworth-mw/helm-charts/releases/download/loki-stack-0.1.0/loki-stack-0.1.0.tgz
+    version: 0.1.0
   opa-gatekeeper:
   - apiVersion: v2
     appVersion: v3.7.1
@@ -116,4 +206,4 @@ entries:
     urls:
     - https://github.com/bradkwadsworth-mw/helm-charts/releases/download/pod-security-policies-0.1.0/pod-security-policies-0.1.0.tgz
     version: 0.1.0
-generated: "2022-03-22T17:29:09.09390212Z"
+generated: "2022-03-22T19:59:42.073938632Z"
