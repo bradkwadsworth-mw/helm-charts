@@ -31,6 +31,7 @@ jobs:
           helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
           helm repo add gatekeeper https://open-policy-agent.github.io/gatekeeper/charts
           helm repo add istio https://istio-release.storage.googleapis.com/charts
+          helm repo add argo https://argoproj.github.io/argo-helm
 
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.3.0
