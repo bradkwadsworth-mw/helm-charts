@@ -1,9 +1,0 @@
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: {{ .Release.Namespace }}
-  labels:
-    istio-injection: enabled
-{{- with .Values.namespaceLabels }}
-{{ toYaml . | indent 4 }}
-{{- end }}
