@@ -2,9 +2,8 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: {{ .Release.Namespace }}
-{{- if .Values.namespaceLabels }}
   labels:
+{{ include "gatekeeper.labels" . | indent 4 }}
 {{- with .Values.namespaceLabels }}
 {{ toYaml . | indent 4 }}
-{{- end }}
 {{- end }}
