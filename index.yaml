@@ -116,6 +116,17 @@ entries:
     urls:
     - https://github.com/bradkwadsworth-mw/helm-charts/releases/download/argo-workflows-0.1.0/argo-workflows-0.1.0.tgz
     version: 0.1.0
+  argocd-apps:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-06-23T15:50:50.324360427Z"
+    description: A Helm chart for Kubernetes
+    digest: 33c681d84a7d9a9c467119b02a6dd5efd1924bb6824d889dad20b6ebb1877bfe
+    name: argocd-apps
+    type: application
+    urls:
+    - https://github.com/bradkwadsworth-mw/helm-charts/releases/download/argocd-apps-0.1.0/argocd-apps-0.1.0.tgz
+    version: 0.1.0
   cert-manager:
   - apiVersion: v2
     appVersion: v1.7.1
@@ -398,4 +409,4 @@ entries:
     urls:
     - https://github.com/bradkwadsworth-mw/helm-charts/releases/download/pod-security-policies-0.1.0/pod-security-policies-0.1.0.tgz
     version: 0.1.0
-generated: "2022-03-23T22:15:42.36354429Z"
+generated: "2022-06-23T15:50:50.324393927Z"
