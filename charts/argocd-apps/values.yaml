@@ -1,0 +1,34 @@
+# Default values for argocd-apps.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+apps:
+  - name: bar
+    project:
+      enabled: true
+      name: foo-project
+      labels:
+        foo: bar
+      annotations:
+        biz: baz
+      description: Foobar
+      clusterResourceWhitelist:
+      - group: '*'
+        kind: '*'
+      sourceRepos:
+      - https://github.com/MavenWave-DevOps/project-x-demo-cluster-gitops.git
+      destinations:
+      - namespace: crossplane-system
+        server: '*'
+    app:
+      enabled: true
+      name: foo-app
+      labels:
+        foo: bar
+      annotations:
+        biz: baz
+    appset:
+      enabled: true
+      name: foo-appset
+      generators:
+        - clusters: {}

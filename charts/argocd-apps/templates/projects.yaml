@@ -1,0 +1,74 @@
+{{- range .Values.apps }}
+{{- $name := .project.name | default .name -}}
+{{- if .project.enabled }}
+{{- with .project }}
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: {{ $name }}
+  namespace:  {{ $.Release.Namespace }}
+{{- if .labels }}
+  labels:
+{{- range $k, $v := .labels }}
+    {{ $k }}: {{ $v }}
+{{- end }}
+{{- end }}
+  annotations:
+    argocd.argoproj.io/sync-wave: {{ .syncWave | default "-100" }}
+{{- range $k, $v := .annotations }}
+    {{ $k }}: {{ $v }}
+{{- end }}
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  description: {{ .description }}
+{{- if .clusterResourceWhitelist }}
+  clusterResourceWhitelist:
+{{ toYaml .clusterResourceWhitelist | indent 2 }}
+{{- end }}
+{{- if .sourceRepos }}
+  sourceRepos:
+{{ toYaml .sourceRepos | indent 2 }}
+{{- end }}
+{{- if .destinations }}
+  destinations:
+{{ toYaml .destinations | indent 2 }}
+{{- end }}
+  roles:
+  - name: admin
+    description: {{ printf "Admin privileges to %s" $name }}
+    policies:
+    - {{ printf "p, proj:%s:admin, applications, *, %s/*, allow" $name $name }}
+{{- if .admins }}
+    groups:
+{{- range .admins }}
+    - {{ . }}
+{{- end }}
+{{- end }}
+  - name: read-only
+    description: {{ printf "Read-only privileges to %s" $name }}
+    policies:
+    - {{ printf "p, proj:%s:read-only, applications, get, %s/*, allow" $name $name }}
+{{- if .viewers }}
+    groups:
+{{- range .viewers }}
+    - {{ . }}
+{{- end }}
+{{- end }}
+  - name: ci-role
+    description: {{ printf "Sync privileges for %s" $name }}
+    policies:
+    - {{ printf "p, proj:%s:ci-role, applications, sync, %s/*, allow" $name $name }}
+{{- if .ci }}
+    groups:
+{{- range .ci }}
+    - {{ . }}
+{{- end }}
+{{- end }}
+{{- if .extraRoles }}
+{{ toYaml .extraRoles | indent 2 }}
+{{- end }}
+{{- end }}
+{{- end }}
+{{- end }}

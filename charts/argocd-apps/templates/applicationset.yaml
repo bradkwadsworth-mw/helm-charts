@@ -1,0 +1,118 @@
+{{- range .Values.apps }}
+{{- $name := .appset.name | default .name -}}
+{{- $project := .project.name | default .name -}}
+{{- if .appset.enabled }}
+{{- with .appset }}
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata: 
+  name: {{ $name }}
+  namespace: {{ $.Release.Namespace }}
+{{- if .labels }}
+  labels:
+{{- range $k, $v := .labels }}
+    {{ $k }}: {{ $v }}
+{{- end }}
+{{- end }}
+  annotations:
+    argocd.argoproj.io/sync-wave: {{ .syncWave | default "-50" }}
+{{- range $k, $v := .annotations }}
+    {{ $k }}: {{ $v }}
+{{- end }}
+spec:
+  generators:
+{{ toYaml .generators | indent 2 }}
+  template:
+{{- end }}
+{{- with .app }}
+    metadata:
+      name: {{ .name }}
+      namespace: {{ $.Release.Namespace }}
+{{- if .labels }}
+      labels:
+{{- range $k, $v := .labels }}
+        {{ $k }}: {{ $v }}
+{{- end }}
+{{- end }}
+      annotations:
+        argocd.argoproj.io/sync-wave: "-50"
+{{- range $k, $v := .annotations }}
+        {{ $k }}: {{ $v }}
+{{- end }}
+      finalizers:
+      - resources-finalizer.argocd.argoproj.io
+    spec:
+      project: {{ .project | default $project }}
+{{- with .info }}
+      info:
+{{- range $k, $v := .info }}
+      - name: {{ $k }}
+        value: {{ $v }}
+{{- end }}
+{{- end }}
+{{- with .ignoreDifferences }}
+      ignoreDifferences:
+{{ toYaml .ignoreDifferences | indent 6 }}
+{{- end }}
+      source:
+        repoURL: {{ .repoURL }}
+        targetRevision: {{ .targetRevision | default "HEAD" }}
+        path: {{ .path }}
+{{- if .chart }}
+        chart: {{ .chart }}
+{{- end }}
+{{- with .directory }}
+        directory:
+          exclude: {{ .exclude }}
+          include: {{ .include }}
+          recurse: {{ .recurse }}
+{{- end }}
+{{- with .helm }}
+        helm:
+          releaseName: {{ .releaseName | default $name }}
+          skipCrds: {{ .skipCrds }}
+          ignoreMissingValueFiles: {{ .ignoreMissingValueFiles | default true }}
+{{- if .valueFiles }}
+          valueFiles:
+{{- range $k, $v := .valueFiles}}
+          - {{ . }}
+{{- end }}
+{{- end }}
+{{- if .values }}
+          values: |
+            {{ .values}}
+{{- end }}
+{{- end }}
+{{- $destination := .destination | default dict }}
+      destination:
+        name: {{ $destination.name }}
+        server: {{ $destination.server | default "https://kubernetes.default.svc" }}
+        namespace: {{ $destination.namespace | default $name }}
+{{- with .syncPolicy }}
+      syncPolicy:
+{{- with .automated }}
+        automated:
+          allowEmpty: {{ .allowEmpty }}
+          prune: {{ .prune }}
+          selfHeal: {{ .selfHeal }}
+{{- end }}
+{{- with .retry }}
+        retry:
+{{- with .backoff }}
+          backoff:
+            duration: {{ .duration }}
+            factor: {{ .factor }}
+            maxDuration: {{ .maxDuration }}
+          limit: {{ .limit }}
+{{- end }}
+{{- end }}
+{{- with .syncOptions }}
+        syncOptions:
+{{- range $k, $v := . }}
+        - {{ . }}
+{{- end }}
+{{- end }}
+{{- end }}
+{{- end }}
+{{- end }}
+{{- end }}
